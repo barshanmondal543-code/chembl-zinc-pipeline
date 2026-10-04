@@ -1,0 +1,121 @@
+================================================================================
+       MOLECULAR REGRESSION FEATURE IMPORTANCE & MODEL EVALUATION REPORT
+================================================================================
+
+Source Excel Database Path: generated/molecular_camble_database_for_ic50.xlsx
+Target Feature Sheet Processed: Morgan Fingerprints
+
+--------------------------------------------------------------------------------
+TARGET ENDPOINT METRIC MODELING PHASE: pIC50 (-log10(M))
+--------------------------------------------------------------------------------
+Total training compounds used: 1254 molecules
+Features after correlation pruning: 1746 features
+Final selected top feature count: 30 features
+
+MODEL PREDICTION QUALITY (5-FOLD CV & HOLDOUT TEST):
+  > Model Framework: Linear Regression
+    * 5-FOLD CV R2 -> Mean: 0.6483 (Std Dev: 0.0384)
+    * HOLDOUT DATA -> Train R2: 0.6761 | Test R2: 0.6606 | MAE: 0.7379 | RMSE: 0.9462
+    * Generalization Gap (Train - Test R2): 0.0155
+
+  > Model Framework: Ridge Regression
+    * 5-FOLD CV R2 -> Mean: 0.6492 (Std Dev: 0.0377)
+    * HOLDOUT DATA -> Train R2: 0.6760 | Test R2: 0.6607 | MAE: 0.7389 | RMSE: 0.9461
+    * Generalization Gap (Train - Test R2): 0.0154
+
+  > Model Framework: Lasso Regression
+    * 5-FOLD CV R2 -> Mean: 0.6467 (Std Dev: 0.0382)
+    * HOLDOUT DATA -> Train R2: 0.6732 | Test R2: 0.6593 | MAE: 0.7495 | RMSE: 0.9480
+    * Generalization Gap (Train - Test R2): 0.0139
+
+  > Model Framework: Random Forest (Reg)
+    * 5-FOLD CV R2 -> Mean: 0.6893 (Std Dev: 0.0275)
+    * HOLDOUT DATA -> Train R2: 0.7291 | Test R2: 0.7098 | MAE: 0.6929 | RMSE: 0.8749
+    * Generalization Gap (Train - Test R2): 0.0193
+
+  > Model Framework: XGBoost (Reg)
+    * 5-FOLD CV R2 -> Mean: 0.7184 (Std Dev: 0.0225)
+    * HOLDOUT DATA -> Train R2: 0.7576 | Test R2: 0.7284 | MAE: 0.6485 | RMSE: 0.8465
+    * Generalization Gap (Train - Test R2): 0.0292
+
+TOP 30 CRITICAL PREDICTIVE MOLECULAR DESCRIPTORS RANKING MATRIX:
+  Rank 01 | Feature Name: morgan_bit_1970                     | Mean Importance Score: 0.22566
+  Rank 02 | Feature Name: morgan_bit_555                      | Mean Importance Score: 0.03938
+  Rank 03 | Feature Name: morgan_bit_781                      | Mean Importance Score: 0.03619
+  Rank 04 | Feature Name: morgan_bit_1910                     | Mean Importance Score: 0.03409
+  Rank 05 | Feature Name: morgan_bit_1039                     | Mean Importance Score: 0.03361
+  Rank 06 | Feature Name: morgan_bit_830                      | Mean Importance Score: 0.03292
+  Rank 07 | Feature Name: morgan_bit_701                      | Mean Importance Score: 0.02824
+  Rank 08 | Feature Name: morgan_bit_1088                     | Mean Importance Score: 0.02581
+  Rank 09 | Feature Name: morgan_bit_544                      | Mean Importance Score: 0.02287
+  Rank 10 | Feature Name: morgan_bit_418                      | Mean Importance Score: 0.01457
+  Rank 11 | Feature Name: morgan_bit_1791                     | Mean Importance Score: 0.01414
+  Rank 12 | Feature Name: morgan_bit_1                        | Mean Importance Score: 0.01386
+  Rank 13 | Feature Name: morgan_bit_1218                     | Mean Importance Score: 0.01333
+  Rank 14 | Feature Name: morgan_bit_1470                     | Mean Importance Score: 0.01283
+  Rank 15 | Feature Name: morgan_bit_680                      | Mean Importance Score: 0.00936
+  Rank 16 | Feature Name: morgan_bit_971                      | Mean Importance Score: 0.00918
+  Rank 17 | Feature Name: morgan_bit_1529                     | Mean Importance Score: 0.00906
+  Rank 18 | Feature Name: morgan_bit_140                      | Mean Importance Score: 0.00885
+  Rank 19 | Feature Name: morgan_bit_1150                     | Mean Importance Score: 0.00868
+  Rank 20 | Feature Name: morgan_bit_457                      | Mean Importance Score: 0.00792
+  Rank 21 | Feature Name: morgan_bit_1599                     | Mean Importance Score: 0.00790
+  Rank 22 | Feature Name: morgan_bit_1785                     | Mean Importance Score: 0.00790
+  Rank 23 | Feature Name: morgan_bit_400                      | Mean Importance Score: 0.00785
+  Rank 24 | Feature Name: morgan_bit_13                       | Mean Importance Score: 0.00687
+  Rank 25 | Feature Name: morgan_bit_1842                     | Mean Importance Score: 0.00684
+  Rank 26 | Feature Name: morgan_bit_2017                     | Mean Importance Score: 0.00674
+  Rank 27 | Feature Name: morgan_bit_1384                     | Mean Importance Score: 0.00657
+  Rank 28 | Feature Name: morgan_bit_1535                     | Mean Importance Score: 0.00649
+  Rank 29 | Feature Name: morgan_bit_1289                     | Mean Importance Score: 0.00635
+  Rank 30 | Feature Name: morgan_bit_1765                     | Mean Importance Score: 0.00589
+
+STRUCTURAL INTERPRETATION & CHEMICAL DECODING ANALYSIS:
+
+[Rank #1] Feature Identifier: 'morgan_bit_1970'
+  -> Type: RDKit Morgan Circular Fingerprint Bit (Radius=2)
+  -> Description: Topological atom environment centering on specific atom paths.
+  -> Occurrences in Dataset: Found 716 molecules carrying this fragment.
+  -> Mapping Environment SMILES Traces from high-performing compounds:
+     * Molecule CHEMBL6145835 (pIC50: 9.92) -> Path Environment: cc(c)O
+     * Molecule CHEMBL6145038 (pIC50: 9.89) -> Path Environment: cc(c)O
+     * Molecule CHEMBL6159528 (pIC50: 9.82) -> Path Environment: cc(c)O
+
+[Rank #2] Feature Identifier: 'morgan_bit_555'
+  -> Type: RDKit Morgan Circular Fingerprint Bit (Radius=2)
+  -> Description: Topological atom environment centering on specific atom paths.
+  -> Occurrences in Dataset: Found 488 molecules carrying this fragment.
+  -> Mapping Environment SMILES Traces from high-performing compounds:
+     * Molecule CHEMBL6145835 (pIC50: 9.92) -> Path Environment: cc(c)Nc(n)n
+     * Molecule CHEMBL6145038 (pIC50: 9.89) -> Path Environment: cc(c)Nc(n)n
+     * Molecule CHEMBL6159528 (pIC50: 9.82) -> Path Environment: cc(c)Nc(n)n
+
+[Rank #3] Feature Identifier: 'morgan_bit_781'
+  -> Type: RDKit Morgan Circular Fingerprint Bit (Radius=2)
+  -> Description: Topological atom environment centering on specific atom paths.
+  -> Occurrences in Dataset: Found 250 molecules carrying this fragment.
+  -> Mapping Environment SMILES Traces from high-performing compounds:
+     * Molecule CHEMBL4800688 (pIC50: 9.29) -> Path Environment: cc(C)s
+     * Molecule CHEMBL4792017 (pIC50: 9.29) -> Path Environment: cc(C)s
+     * Molecule CHEMBL4787929 (pIC50: 9.29) -> Path Environment: cc(C)s
+
+[Rank #4] Feature Identifier: 'morgan_bit_1910'
+  -> Type: RDKit Morgan Circular Fingerprint Bit (Radius=2)
+  -> Description: Topological atom environment centering on specific atom paths.
+  -> Occurrences in Dataset: Found 309 molecules carrying this fragment.
+  -> Mapping Environment SMILES Traces from high-performing compounds:
+     * Molecule CHEMBL6145835 (pIC50: 9.92) -> Path Environment: CC(C)N
+     * Molecule CHEMBL6145038 (pIC50: 9.89) -> Path Environment: CC(C)N
+     * Molecule CHEMBL6159528 (pIC50: 9.82) -> Path Environment: CC(C)N
+
+[Rank #5] Feature Identifier: 'morgan_bit_1039'
+  -> Type: RDKit Morgan Circular Fingerprint Bit (Radius=2)
+  -> Description: Topological atom environment centering on specific atom paths.
+  -> Occurrences in Dataset: Found 308 molecules carrying this fragment.
+  -> Mapping Environment SMILES Traces from high-performing compounds:
+     * Molecule CHEMBL2392556 (pIC50: 9.00) -> Path Environment: [C@@H]CN(c(c)n)C(C)C
+     * Molecule CHEMBL5190855 (pIC50: 8.66) -> Path Environment: ccccc
+     * Molecule CHEMBL1945170 (pIC50: 8.30) -> Path Environment: ccccc
+
+================================================================================
+

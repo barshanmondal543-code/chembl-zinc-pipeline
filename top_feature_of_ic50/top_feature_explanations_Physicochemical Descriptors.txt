@@ -1,0 +1,96 @@
+================================================================================
+       MOLECULAR REGRESSION FEATURE IMPORTANCE & MODEL EVALUATION REPORT
+================================================================================
+
+Source Excel Database Path: generated/molecular_camble_database_for_ic50.xlsx
+Target Feature Sheet Processed: Physicochemical Descriptors
+
+--------------------------------------------------------------------------------
+TARGET ENDPOINT METRIC MODELING PHASE: pIC50 (-log10(M))
+--------------------------------------------------------------------------------
+Total training compounds used: 1254 molecules
+Features after correlation pruning: 148 features
+Final selected top feature count: 30 features
+
+MODEL PREDICTION QUALITY (5-FOLD CV & HOLDOUT TEST):
+  > Model Framework: Linear Regression
+    * 5-FOLD CV R2 -> Mean: 0.4881 (Std Dev: 0.0586)
+    * HOLDOUT DATA -> Train R2: 0.5215 | Test R2: 0.5415 | MAE: 0.8730 | RMSE: 1.0997
+    * Generalization Gap (Train - Test R2): -0.0200
+
+  > Model Framework: Ridge Regression
+    * 5-FOLD CV R2 -> Mean: 0.4893 (Std Dev: 0.0563)
+    * HOLDOUT DATA -> Train R2: 0.5212 | Test R2: 0.5391 | MAE: 0.8757 | RMSE: 1.1027
+    * Generalization Gap (Train - Test R2): -0.0178
+
+  > Model Framework: Lasso Regression
+    * 5-FOLD CV R2 -> Mean: 0.4847 (Std Dev: 0.0493)
+    * HOLDOUT DATA -> Train R2: 0.5111 | Test R2: 0.5194 | MAE: 0.9043 | RMSE: 1.1260
+    * Generalization Gap (Train - Test R2): -0.0083
+
+  > Model Framework: Random Forest (Reg)
+    * 5-FOLD CV R2 -> Mean: 0.7314 (Std Dev: 0.0364)
+    * HOLDOUT DATA -> Train R2: 0.8657 | Test R2: 0.7626 | MAE: 0.6118 | RMSE: 0.7914
+    * Generalization Gap (Train - Test R2): 0.1031
+
+  > Model Framework: XGBoost (Reg)
+    * 5-FOLD CV R2 -> Mean: 0.7185 (Std Dev: 0.0348)
+    * HOLDOUT DATA -> Train R2: 0.8481 | Test R2: 0.7675 | MAE: 0.6018 | RMSE: 0.7831
+    * Generalization Gap (Train - Test R2): 0.0805
+
+TOP 30 CRITICAL PREDICTIVE MOLECULAR DESCRIPTORS RANKING MATRIX:
+  Rank 01 | Feature Name: BCUT2D_LOGPHI                       | Mean Importance Score: 0.10711
+  Rank 02 | Feature Name: fr_aniline                          | Mean Importance Score: 0.07622
+  Rank 03 | Feature Name: SlogP_VSA10                         | Mean Importance Score: 0.06689
+  Rank 04 | Feature Name: PEOE_VSA10                          | Mean Importance Score: 0.04882
+  Rank 05 | Feature Name: BCUT2D_CHGLO                        | Mean Importance Score: 0.04017
+  Rank 06 | Feature Name: fr_imidazole                        | Mean Importance Score: 0.03836
+  Rank 07 | Feature Name: SlogP_VSA1                          | Mean Importance Score: 0.02985
+  Rank 08 | Feature Name: MolWt                               | Mean Importance Score: 0.02615
+  Rank 09 | Feature Name: VSA_EState5                         | Mean Importance Score: 0.02552
+  Rank 10 | Feature Name: FpDensityMorgan1                    | Mean Importance Score: 0.02228
+  Rank 11 | Feature Name: AvgIpc                              | Mean Importance Score: 0.02189
+  Rank 12 | Feature Name: fr_thiophene                        | Mean Importance Score: 0.01919
+  Rank 13 | Feature Name: NumAromaticRings                    | Mean Importance Score: 0.01904
+  Rank 14 | Feature Name: VSA_EState9                         | Mean Importance Score: 0.01560
+  Rank 15 | Feature Name: fr_priamide                         | Mean Importance Score: 0.01522
+  Rank 16 | Feature Name: SMR_VSA6                            | Mean Importance Score: 0.01342
+  Rank 17 | Feature Name: PEOE_VSA13                          | Mean Importance Score: 0.01302
+  Rank 18 | Feature Name: qed                                 | Mean Importance Score: 0.01150
+  Rank 19 | Feature Name: MaxAbsPartialCharge                 | Mean Importance Score: 0.01108
+  Rank 20 | Feature Name: VSA_EState10                        | Mean Importance Score: 0.01039
+  Rank 21 | Feature Name: SlogP_VSA12                         | Mean Importance Score: 0.01014
+  Rank 22 | Feature Name: BalabanJ                            | Mean Importance Score: 0.00956
+  Rank 23 | Feature Name: SMR_VSA7                            | Mean Importance Score: 0.00956
+  Rank 24 | Feature Name: MinPartialCharge                    | Mean Importance Score: 0.00954
+  Rank 25 | Feature Name: BCUT2D_MRLOW                        | Mean Importance Score: 0.00943
+  Rank 26 | Feature Name: VSA_EState3                         | Mean Importance Score: 0.00933
+  Rank 27 | Feature Name: BCUT2D_MWHI                         | Mean Importance Score: 0.00911
+  Rank 28 | Feature Name: EState_VSA4                         | Mean Importance Score: 0.00900
+  Rank 29 | Feature Name: SlogP_VSA3                          | Mean Importance Score: 0.00898
+  Rank 30 | Feature Name: PEOE_VSA9                           | Mean Importance Score: 0.00846
+
+STRUCTURAL INTERPRETATION & CHEMICAL DECODING ANALYSIS:
+
+[Rank #1] Feature Identifier: 'BCUT2D_LOGPHI'
+  -> Type: Continuous Physicochemical/Topological 2D/3D Molecule Descriptor
+  -> Description: Global property calculation value reflecting macro molecular features.
+
+[Rank #2] Feature Identifier: 'fr_aniline'
+  -> Type: Continuous Physicochemical/Topological 2D/3D Molecule Descriptor
+  -> Description: Global property calculation value reflecting macro molecular features.
+
+[Rank #3] Feature Identifier: 'SlogP_VSA10'
+  -> Type: Continuous Physicochemical/Topological 2D/3D Molecule Descriptor
+  -> Description: Global property calculation value reflecting macro molecular features.
+
+[Rank #4] Feature Identifier: 'PEOE_VSA10'
+  -> Type: Continuous Physicochemical/Topological 2D/3D Molecule Descriptor
+  -> Description: Global property calculation value reflecting macro molecular features.
+
+[Rank #5] Feature Identifier: 'BCUT2D_CHGLO'
+  -> Type: Continuous Physicochemical/Topological 2D/3D Molecule Descriptor
+  -> Description: Global property calculation value reflecting macro molecular features.
+
+================================================================================
+
